@@ -9,12 +9,15 @@ The notebook aims to classify LIGO spectrogram images (from the Gravity Spy Zoon
 Dataset: https://drive.google.com/file/d/1ifQ-NjhTjBrfRBiA8y7RK0Rz6qLgDSpZ/view?usp=drive_link
 
 🧠 Overview of the Workflow
+
 1. Setup and Data Access
 
 The notebook starts by mounting Google Drive and unzipping the dataset (LIGOGravitySpyZooniverseProject.zip) into the working directory.
 
 from google.colab import drive
+
 drive.mount('/content/gdrive')
+
 !unzip /content/gdrive/MyDrive/Dataset/LIGOGravitySpyZooniverseProject.zip
 
 2. Library Imports
@@ -34,7 +37,9 @@ Deep learning: tensorflow.keras (for CNN model creation, training, and evaluatio
 Defines paths for the training, validation, and testing image datasets:
 
 train_dir = '/content/train/train'
+
 test_dir = '/content/test/test'
+
 validation_dir = '/content/validation/validation'
 
 4. Data Exploration
@@ -56,6 +61,7 @@ Splits data into training, validation, and testing sets.
 6. Model Architecture (CNN)
 
 A Convolutional Neural Network (CNN) is built using Keras Sequential API.
+
 Typical layers include:
 
 Conv2D + MaxPooling2D (for feature extraction)
@@ -65,7 +71,9 @@ Flatten + Dense (for classification)
 Dropout (to reduce overfitting)
 
 Optimizer used: Adam
+
 Loss function: categorical_crossentropy
+
 Metrics: accuracy
 
 7. Training Configuration
